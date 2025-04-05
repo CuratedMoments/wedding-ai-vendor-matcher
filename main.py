@@ -43,5 +43,9 @@ def match_vendors():
 
     return jsonify({"matches": results})
 
+import os
+
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get("PORT", 5000))  # Render sets PORT dynamically
+    app.run(host='0.0.0.0', port=port)
+
